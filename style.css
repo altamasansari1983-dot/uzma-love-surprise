@@ -1,0 +1,666 @@
+/* ===============================
+   GLOBAL SETTINGS
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+    background:#0b0710;
+    color:white;
+}
+
+
+/* ===============================
+   DARK CHAT INTRO
+================================ */
+
+
+#chatIntro{
+    height:100vh;
+    width:100%;
+    background:
+    radial-gradient(circle at center,#21152c,#050307);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+
+
+.phone{
+    width:92%;
+    max-width:390px;
+    height:700px;
+    background:#111;
+    border-radius:35px;
+    box-shadow:
+    0 0 50px rgba(255,100,180,.15);
+    overflow:hidden;
+    position:relative;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+
+
+.chatHeader{
+    height:75px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    background:#18151c;
+}
+
+
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#ff7eb8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+}
+
+
+
+.chatHeader h3{
+    font-family:sans-serif;
+    font-size:17px;
+}
+
+
+
+.chatHeader span{
+    color:#8cffaa;
+    font-size:12px;
+}
+
+
+
+.chatBox{
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+
+
+.message{
+    max-width:80%;
+    padding:12px 16px;
+    border-radius:20px;
+    font-family:sans-serif;
+    font-size:14px;
+    animation:messageShow .5s ease;
+}
+
+
+
+.received{
+    background:#26222b;
+    align-self:flex-start;
+}
+
+
+
+.sent{
+    background:#d85b9b;
+    align-self:flex-end;
+}
+
+
+
+.hidden{
+    display:none;
+}
+
+
+
+.special{
+    box-shadow:
+    0 0 25px rgba(255,100,200,.6);
+}
+
+
+
+.typing{
+    position:absolute;
+    bottom:35px;
+    left:25px;
+    display:flex;
+    gap:5px;
+}
+
+
+
+.typing span{
+    width:8px;
+    height:8px;
+    background:#aaa;
+    border-radius:50%;
+    animation:type 1s infinite;
+}
+
+
+.typing span:nth-child(2){
+    animation-delay:.2s;
+}
+
+.typing span:nth-child(3){
+    animation-delay:.4s;
+}
+
+
+
+@keyframes type{
+    50%{
+        transform:translateY(-5px);
+    }
+}
+
+
+
+
+
+/* ===============================
+ MAGIC REVEAL
+================================ */
+
+
+.magicReveal{
+
+    position:absolute;
+    text-align:center;
+    opacity:0;
+    pointer-events:none;
+
+}
+
+
+
+.glowHeart{
+
+    font-size:90px;
+
+    animation:pulse 1.5s infinite;
+
+    filter:
+    drop-shadow(0 0 25px pink);
+
+}
+
+
+
+.magicReveal p{
+
+    font-size:22px;
+
+}
+
+
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.2);
+    }
+
+}
+
+
+
+
+
+
+/* ===============================
+ MAIN PAGE
+================================ */
+
+
+#mainPage{
+
+    display:none;
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+    180deg,
+    #eee0ff,
+    #ffddea,
+    #fff6ef
+    );
+
+    color:#5a3455;
+
+    position:relative;
+
+}
+
+
+
+
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+
+
+.glassCard{
+
+    width:90%;
+
+    max-width:400px;
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.35);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:35px;
+
+    box-shadow:
+    0 20px 60px rgba(150,70,120,.25);
+
+}
+
+
+
+.glassCard h1{
+
+    font-family:'Dancing Script',cursive;
+
+    font-size:48px;
+
+}
+
+
+
+.glassCard p{
+
+    font-size:22px;
+
+    margin:20px;
+
+}
+
+
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(45deg,#ff8fb8,#c58cff);
+
+    color:white;
+
+    font-size:16px;
+
+    box-shadow:
+    0 10px 25px rgba(255,100,160,.3);
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+
+
+
+/* ===============================
+ LETTER
+================================ */
+
+
+.letterSection{
+
+    min-height:500px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.envelope{
+
+    width:300px;
+
+    height:210px;
+
+    background:#d89ab8;
+
+    position:relative;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+}
+
+
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+
+    height:100px;
+
+    background:#eab2cc;
+
+    clip-path:polygon(0 0,100% 0,50% 70%);
+
+    transition:1s;
+
+    z-index:2;
+
+}
+
+
+
+.paper{
+
+    position:absolute;
+
+    background:white;
+
+    color:#633d58;
+
+    width:90%;
+
+    height:260px;
+
+    left:5%;
+
+    bottom:0;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    transform:translateY(0);
+
+    transition:1s;
+
+    overflow:hidden;
+
+}
+
+
+
+.envelope.open .paper{
+
+    transform:translateY(-120px);
+
+}
+
+
+
+.envelope.open .flap{
+
+    transform:rotateX(180deg);
+
+}
+
+
+
+
+
+/* ===============================
+ CHOICES
+================================ */
+
+
+.choiceSection,
+.memorySection,
+.finalSection{
+
+    padding:50px 20px;
+
+    text-align:center;
+
+}
+
+
+
+.choices{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+
+
+#answerBox{
+
+    margin-top:25px;
+
+    font-size:22px;
+
+    font-family:'Dancing Script';
+
+}
+
+
+
+
+
+/* ===============================
+ MEMORY CARDS
+================================ */
+
+
+.memoryGrid{
+
+    display:grid;
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+
+
+.memoryCard{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 15px 35px rgba(100,50,100,.15);
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:1s;
+
+}
+
+
+
+.memoryCard.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+
+.photoPlaceholder{
+
+    height:150px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:50px;
+
+    background:#fbe8f3;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* ===============================
+ MUSIC
+================================ */
+
+
+.musicControl{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+}
+
+
+
+
+
+/* ===============================
+ FINAL
+================================ */
+
+
+.finalSection{
+
+    min-height:500px;
+
+}
+
+
+
+#finalMessage{
+
+    display:none;
+
+    margin-top:50px;
+
+    animation:fade .8s;
+
+}
+
+
+
+#finalMessage h1{
+
+    font-family:'Dancing Script';
+
+    font-size:42px;
+
+}
+
+
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+
+
+
+/* ===============================
+ RESPONSIVE
+================================ */
+
+
+@media(min-width:700px){
+
+.memoryGrid{
+
+    grid-template-columns:repeat(3,1fr);
+
+}
+
+
+}
