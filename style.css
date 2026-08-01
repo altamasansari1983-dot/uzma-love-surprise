@@ -555,6 +555,15 @@ button:hover{
 
 
 
+.memoryCard img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+
+
 .photoPlaceholder{
 
     height:150px;
